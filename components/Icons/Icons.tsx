@@ -53,6 +53,23 @@ const ChevronIcon = (props: SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
+const CheckIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg width={12} height={9} xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M10.5 1.5L4 8l-3-3" stroke="currentColor" strokeWidth="2" fill="none" />
+    </svg>
+);
+
+const DragIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg width={8} height={12} xmlns="http://www.w3.org/2000/svg" {...props}>
+        <circle cx={2} cy={2} r={1.5} />
+        <circle cx={6} cy={2} r={1.5} />
+        <circle cx={2} cy={6} r={1.5} />
+        <circle cx={6} cy={6} r={1.5} />
+        <circle cx={2} cy={10} r={1.5} />
+        <circle cx={6} cy={10} r={1.5} />
+    </svg>
+);
+
 export {
     BoardIcon,
     AddTaskIconMobile,
@@ -62,4 +79,6 @@ export {
     CrossIcon,
     EditIcon,
     ChevronIcon,
+    CheckIcon,
+    DragIcon,
 };
