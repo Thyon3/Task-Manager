@@ -47,6 +47,12 @@ const EditIcon = (props: SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
+const ChevronIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg width={10} height={10} xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M2.5 3.5L5 6l2.5-2.5M7.5 6.5L5 9l-2.5-2.5" stroke="currentColor" strokeWidth="1" fill="none" />
+    </svg>
+);
+
 export {
     BoardIcon,
     AddTaskIconMobile,
@@ -55,4 +61,5 @@ export {
     HideSidebarIcon,
     CrossIcon,
     EditIcon,
+    ChevronIcon,
 };
