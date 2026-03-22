@@ -22,3 +22,15 @@ const VerticalEllipsisIcon = (props: SVGProps<SVGSVGElement>) => (
         </g>
     </svg>
 );
+
+const ShowSidebarIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg width={16} height={11} xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M15.875 8.625H5.75V10.5h10.125V8.625Zm0-4.125H5.75v1.875h10.125V4.5ZM0 0v1.875h15.875V0H0Zm0 4.5v1.875h4.125V4.5H0Zm0 4.125V10.5h4.125V8.625H0Z" />
+    </svg>
+);
+
+const HideSidebarIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg width={18} height={16} xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M2.625 1.125H15.75v13.5H2.625V1.125ZM1.125 0v15.75h15.75V0H1.125Zm2.25 2.25h11.25v2.25H3.375V2.25Zm0 3.75h11.25v2.25H3.375V6Zm0 3.75h11.25v2.25H3.375V9.75Z" />
+    </svg>
+);
