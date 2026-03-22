@@ -34,3 +34,25 @@ const HideSidebarIcon = (props: SVGProps<SVGSVGElement>) => (
         <path d="M2.625 1.125H15.75v13.5H2.625V1.125ZM1.125 0v15.75h15.75V0H1.125Zm2.25 2.25h11.25v2.25H3.375V2.25Zm0 3.75h11.25v2.25H3.375V6Zm0 3.75h11.25v2.25H3.375V9.75Z" />
     </svg>
 );
+
+const CrossIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg width={13} height={13} xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M11.59.41 12 7.06 7.47 2.53 12 1.47 10.94 6 6.41 1.47 2 2.53.94 7.06 5.59 11.59 10.12 7.06 11.59 12 10.53 10.94 6 6.41 10.53 2 11.59.41Z" />
+    </svg>
+);
+
+const EditIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg width={14} height={14} xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M13.479 2.872 11.082.474a.8.8 0 0 0-1.128 0L8.728 1.617l1.415 1.415 1.243-1.243a.8.8 0 0 1 1.128 0l1.415 1.415a.8.8 0 0 1 0 1.128l-1.243 1.243 1.415 1.415 1.058-1.058a.8.8 0 0 0 0-1.128Zm-10.9 10.9a.8.8 0 0 0 0 1.128l1.415 1.415a.8.8 0 0 0 1.128 0l1.058-1.058-1.415-1.415-1.243 1.243a.8.8 0 0 1-1.128 0L2.58 11.082a.8.8 0 0 1 0-1.128l1.243-1.243L2.408 8.296a.8.8 0 0 0 0-1.128Z" />
+    </svg>
+);
+
+export {
+    BoardIcon,
+    AddTaskIconMobile,
+    VerticalEllipsisIcon,
+    ShowSidebarIcon,
+    HideSidebarIcon,
+    CrossIcon,
+    EditIcon,
+};
