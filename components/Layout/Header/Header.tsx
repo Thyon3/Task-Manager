@@ -12,6 +12,7 @@ import { mutate } from 'swr';
 import { LinkContainer, PopoverLink } from '../../Popover/Popover';
 import { signOut, useSession } from 'next-auth/react';
 
+// Enhanced Header component with responsive design
 const Header: FC = () => {
     const [isMobile, setIsMobile] = useState(false);
     const mobileMenu = useModal({ type: 'mobileMenu' });
