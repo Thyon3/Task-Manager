@@ -18,6 +18,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "paths": {
+      "@/*": ["./components/*", "./pages/*", "./utils/*", "./hooks/*", "./store/*"]
+    },
     "downlevelIteration": true,
     "baseUrl": ".",
     "plugins": [
