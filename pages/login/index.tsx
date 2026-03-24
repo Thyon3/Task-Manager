@@ -7,13 +7,13 @@ import { Input } from '../../components/Inputs/Inputs';
 import { ButtonPrimary } from '../../components/Buttons/Buttons';
 import useInput from '../../hooks/useInput';
 
+// Provider button component for OAuth login
 const ProviderButton: FC<PropsWithChildren<{ provider: string; className?: string; icon?: string }>> = (props) => {
     return (
         <button
             onClick={() => signIn(props.provider)}
-            className={`mt-4 flex w-full items-center justify-center rounded-md py-3 px-4 font-bold ${
-                props.className ?? ''
-            }`}
+            className={`mt-4 flex w-full items-center justify-center rounded-md py-3 px-4 font-bold ${props.className ?? ''
+                }`}
         >
             {props.icon && <img src={props.icon} alt={`${props.provider} icon`} className="h-6 w-6" />}
             <span className="flex-grow">{props.children}</span>
@@ -21,6 +21,7 @@ const ProviderButton: FC<PropsWithChildren<{ provider: string; className?: strin
     );
 };
 
+// Login page component with OAuth and email authentication
 export default function Home() {
     const { darkModeEnabled } = useContext(ThemeContext);
     const emailInput = useInput<string>({
@@ -63,7 +64,7 @@ export default function Home() {
                     <p className="mb-8 text-center text-mid-grey dark:text-light-grey">
                         Sign in to your account to continue
                     </p>
-                    
+
                     <form onSubmit={handleEmailSubmit} className="mb-6">
                         <Input
                             value={emailInput.value ?? ''}
