@@ -9,17 +9,20 @@ import Spinner from '../../../components/Spinner/Spinner';
 import useModal from '../../../hooks/useModal';
 import { useBoardsContext } from '../../../store/BoardListContext';
 
+// Board page component with task details modal
 export default function BoardPage() {
     const { selectedBoard, selectedTask, setSelectedTask, isLoading, isValidating } = useBoardsContext();
     const taskDetailsModal = useModal();
     const Modal = taskDetailsModal.Component;
 
+    // Open task details modal when task is selected
     useEffect(() => {
         if (selectedTask) {
             taskDetailsModal.open();
         }
     }, [selectedTask]);
 
+    // Reset selected task and refresh board when modal closes
     useEffect(() => {
         if (selectedBoard && !taskDetailsModal.isOpen) {
             setSelectedTask(null);
