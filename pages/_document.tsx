@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
+// Document component for HTML structure
 export default function Document() {
     return (
         <Html lang="en">
