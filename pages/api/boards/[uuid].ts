@@ -8,6 +8,7 @@ import { Session, getServerSession } from 'next-auth';
 import { randomHexColor } from '../../../utils/utils';
 import { options } from '../auth/[...nextauth]';
 
+// Board UUID API handler with authentication and validation
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const session = await getServerSession(req, res, options);
     if (!session) {
