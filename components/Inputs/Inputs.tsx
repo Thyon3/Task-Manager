@@ -16,6 +16,7 @@ import {
 import { SortableContext, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import usePopover from '../../hooks/usePopover';
 
+// Error message component for form validation
 const ErrorMsg: FC<PropsWithChildren> = ({ children }) => {
     return (
         <span className="absolute right-3 -top-2.5 whitespace-nowrap bg-white px-1 text-sm text-danger dark:bg-dark-grey sm:top-2.5 sm:right-4">
