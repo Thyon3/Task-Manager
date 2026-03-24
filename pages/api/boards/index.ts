@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Session, getServerSession } from 'next-auth';
 import { options } from '../auth/[...nextauth]';
 
+// Board type for API requests
 type Board = {
     name: string;
     columns?: Column[];
@@ -12,6 +13,7 @@ type Board = {
     user: string;
 };
 
+// Column type for API requests
 type Column = {
     name: string;
     color: string;
@@ -19,6 +21,7 @@ type Column = {
     uuid: string;
 };
 
+// Boards API handler with authentication
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const session = await getServerSession(req, res, options);
     if (!session) {
