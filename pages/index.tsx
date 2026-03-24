@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout/Layout';
 import { getSession, GetSessionParams } from 'next-auth/react';
 
+// Home page component with authentication check
 export default function Home() {
     return (
         <Layout>
@@ -20,6 +21,7 @@ export default function Home() {
     );
 }
 
+// Server-side authentication check
 export async function getServerSideProps(context: GetSessionParams) {
     const session = await getSession(context);
 
