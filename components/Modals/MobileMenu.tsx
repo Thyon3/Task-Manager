@@ -2,6 +2,7 @@ import React, { Dispatch, FC, SetStateAction } from 'react';
 import BoardList from '../BoardList/BoardList';
 import ThemeToggle from '../BoardList/ThemeToggle';
 
+// Mobile menu component for navigation on small screens
 const MobileMenu: FC<{
     setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
 }> = (props) => {
