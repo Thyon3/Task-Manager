@@ -5,6 +5,7 @@ import { validate } from 'uuid';
 import { getServerSession, Session } from 'next-auth';
 import { options } from '../auth/[...nextauth]';
 
+// Column UUID API handler with authentication and validation
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const session = await getServerSession(req, res, options);
     if (!session) {
