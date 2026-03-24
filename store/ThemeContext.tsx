@@ -9,14 +9,16 @@ const prefersDark = (() => {
         : window.matchMedia('(prefers-color-scheme: dark)').matches;
 })();
 
+// Theme context for managing dark/light mode across the application
 export const ThemeContext = React.createContext<{
     darkModeEnabled: boolean;
     toggleTheme: () => void;
 }>({
     darkModeEnabled: true,
-    toggleTheme: () => {},
+    toggleTheme: () => { },
 });
 
+// Theme context provider component
 const ThemeContextProvider: React.FC<PropsWithChildren> = (props) => {
     const [darkModeEnabled, setDarkModeEnabled] = React.useState<boolean>(true);
 
