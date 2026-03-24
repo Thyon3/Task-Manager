@@ -6,6 +6,7 @@ import type { KeyedMutator } from 'swr';
 import { fetcher } from '../utils/utils';
 import { useSession } from 'next-auth/react';
 
+// Board list context interface for managing board state
 export type BoardListContextProps = {
     boards?: Board[];
     selectedBoard: Board | null;
@@ -17,6 +18,7 @@ export type BoardListContextProps = {
     error: any;
 };
 
+// Context for managing board list state across the application
 export const BoardListContext = React.createContext<BoardListContextProps>({
     boards: [],
     selectedBoard: null,
