@@ -1,6 +1,7 @@
 import { FC, MouseEventHandler, PropsWithChildren, useEffect } from 'react';
 import { ButtonDanger, ButtonSecondary } from '../Buttons/Buttons';
 
+// Modal component types and interfaces
 type ModalProps = {
     closeModal: () => void;
     className?: string;
@@ -22,17 +23,15 @@ const ModalBase = (
         <div
             data-testid="modal-backdrop"
             onClick={props.onClickHandler}
-            className={`absolute z-50 bg-black bg-opacity-50 ${
-                props.options?.type === 'mobileMenu' ? ' h-full w-full' : 'flex h-screen w-screen items-center'
-            }`}
+            className={`absolute z-50 bg-black bg-opacity-50 ${props.options?.type === 'mobileMenu' ? ' h-full w-full' : 'flex h-screen w-screen items-center'
+                }`}
         >
             <dialog
                 data-testid={testId}
-                className={`z-50 block max-h-[80vh] overflow-auto bg-white dark:bg-dark-grey ${
-                    props.options?.type === 'mobileMenu'
+                className={`z-50 block max-h-[80vh] overflow-auto bg-white dark:bg-dark-grey ${props.options?.type === 'mobileMenu'
                         ? 'my-4 w-72 rounded-lg px-0 py-4 shadow-menu dark:shadow-menu-dark'
                         : 'w-86 rounded-md p-6 sm:w-120 sm:p-8'
-                } ${props.className || ''}`}
+                    } ${props.className || ''}`}
             >
                 {props.children}
             </dialog>
