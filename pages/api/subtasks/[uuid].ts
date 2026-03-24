@@ -5,6 +5,7 @@ import { validate } from 'uuid';
 import { getServerSession, Session } from 'next-auth';
 import { options } from '../auth/[...nextauth]';
 
+// Subtask UUID API handler with authentication and validation
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const session = await getServerSession(req, res, options);
     if (!session) {
@@ -26,6 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 }
 
+// Update subtask function
 const updateSubtask = async (req: NextApiRequest, res: NextApiResponse, session: Session) => {
     const subtaskUUID = req.query.uuid!.toString();
     const currentSubtaskData = await prisma.subtask.findFirst({
