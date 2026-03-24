@@ -5,6 +5,7 @@ import { UniqueIdentifier } from '@dnd-kit/core';
 export type RequestOptionsWithBody = Parameters<Page['request']['post']>[1];
 export type RequestOptionsNoBody = Parameters<Page['request']['get']>[1];
 
+// Board type definition
 export type Board = {
     id: number;
     uuid: string;
@@ -15,6 +16,7 @@ export type Board = {
     columns: Column[];
 };
 
+// Multi input type for form fields
 export type MultiInput = {
     value: string;
     id: string;
