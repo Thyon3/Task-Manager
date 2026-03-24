@@ -6,6 +6,7 @@ import { randomHexColor } from '../../utils/utils';
 import { ButtonPrimary } from '../Buttons/Buttons';
 import { Input, MultiValueInput } from '../Inputs/Inputs';
 
+// Validation functions for board form
 // Validate input length - must be between 1 and 20 characters. Return tuple of boolean and error message.
 const validateName = (val: string | undefined): [boolean, string] => {
     if (!val || val?.trim().length < 1) return [false, "Can't be empty"];
