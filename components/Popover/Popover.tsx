@@ -1,5 +1,6 @@
 import { FC, PropsWithChildren, SyntheticEvent } from 'react';
 
+// Container component for popover menu items
 export const LinkContainer: FC<PropsWithChildren<{ className?: string }>> = ({ children, className }) => {
     return (
         <ul
@@ -23,9 +24,8 @@ export const PopoverLink: FC<
     return (
         <li data-testid="popover-item" className={`mb-4 last:mb-0 ${className ?? ''}`}>
             <button
-                className={`cursor-pointer  ${
-                    danger ? 'text-danger' : 'text-mid-grey'
-                } disabled:cursor-default disabled:text-opacity-50`}
+                className={`cursor-pointer  ${danger ? 'text-danger' : 'text-mid-grey'
+                    } disabled:cursor-default disabled:text-opacity-50`}
                 onClick={onClick}
                 disabled={disabled}
                 id={id}
