@@ -3,6 +3,7 @@ import { useState, useEffect, FC, PropsWithChildren, MouseEventHandler } from 'r
 import ReactDOM from 'react-dom';
 import ModalElem from '../components/Modals/Modal';
 
+// Modal hook interface and types
 type ModalHook = {
     isOpen: boolean;
     toggle: () => void;
@@ -11,6 +12,7 @@ type ModalHook = {
     Component: FC<PropsWithChildren>;
 };
 
+// Custom hook for modal management
 const useModal = (options?: {
     type?: 'mobileMenu' | 'danger';
     dangerHeader?: string;
@@ -46,11 +48,11 @@ const useModal = (options?: {
     const Component = (props: PropsWithChildren<{}>) => {
         return isOpen && modalRoot && mobileMenuRoot
             ? ReactDOM.createPortal(
-                  <ModalElem closeModal={toggle} options={options}>
-                      {props.children}
-                  </ModalElem>,
-                  options?.type === 'mobileMenu' ? mobileMenuRoot : modalRoot
-              )
+                <ModalElem closeModal={toggle} options={options}>
+                    {props.children}
+                </ModalElem>,
+                options?.type === 'mobileMenu' ? mobileMenuRoot : modalRoot
+            )
             : null;
     };
 
