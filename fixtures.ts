@@ -1,3 +1,4 @@
+// Test fixtures for Playwright testing
 import { test as base, request, APIRequestContext, Page } from '@playwright/test';
 import pageObjects from './tests/pageObjects/';
 import ApiUtils from './utils/testApiUtils';
@@ -5,6 +6,7 @@ import type { Board } from './types';
 import type BasePage from './tests/pageObjects/BasePage';
 import BoardPage from './tests/pageObjects/BoardPage';
 
+// Custom test fixtures for the application
 type CustomFixtures = {
     testBoard: Board;
     testBoardWithColumn: Board;
@@ -85,11 +87,11 @@ export const test = base.extend<CustomFixtures>({
         await use([boardPage, testBoard]);
     },
 
-    pageObjects: async ({}, use) => {
+    pageObjects: async ({ }, use) => {
         await use(pageObjects);
     },
 
-    noAuthRequest: async ({}, use) => {
+    noAuthRequest: async ({ }, use) => {
         const context = await request.newContext({
             baseURL: process.env.BASE_URL,
             storageState: { cookies: [], origins: [] },
@@ -107,7 +109,7 @@ export const test = base.extend<CustomFixtures>({
         await page.close();
     },
 
-    altRequest: async ({}, use) => {
+    altRequest: async ({ }, use) => {
         const context = await request.newContext({
             baseURL: process.env.BASE_URL,
             storageState: 'storageStateAlt.json',
