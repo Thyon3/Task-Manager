@@ -1,4 +1,4 @@
-// SWR fetcher
+// SWR fetcher for API requests
 export const fetcher = async <JSON>(input: RequestInfo, init?: RequestInit): Promise<JSON> => {
     const res = await fetch(input, init);
     if (!res.ok) {
@@ -10,6 +10,7 @@ export const fetcher = async <JSON>(input: RequestInfo, init?: RequestInit): Pro
     return res.json();
 };
 
+// Generate random hex color for board themes
 export const randomHexColor = () => {
     return (
         '#' +
