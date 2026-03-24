@@ -8,6 +8,7 @@ import dotenv from 'dotenv';
 import { prisma } from '../../../utils/db';
 dotenv.config();
 
+// NextAuth configuration options
 export const options = {
     providers: [
         EmailProvider({
