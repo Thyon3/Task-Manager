@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { MultiInputChangeEvent } from '../types';
 
+// Input hook interface for form input management
 type InputHook<T> = {
     value: T | undefined;
     isValid?: boolean;
@@ -13,6 +14,7 @@ type InputHook<T> = {
     inputBlurHandler: (e: MultiInputChangeEvent) => void;
 };
 
+// Custom hook for form input state management and validation
 function useInput<T>(options?: { validateFn?: (value: T) => [boolean, string]; initialValue?: T }): InputHook<T> {
     const [value, setValue] = useState<T | undefined>(options?.initialValue ?? undefined);
     const [isTouched, setIsTouched] = useState(false);
