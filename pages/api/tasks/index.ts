@@ -6,6 +6,7 @@ import { NewTask } from '../../../types';
 import { getServerSession, Session } from 'next-auth';
 import { options } from '../auth/[...nextauth]';
 
+// Tasks API handler with authentication
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const session = await getServerSession(req, res, options);
     if (!session) {
