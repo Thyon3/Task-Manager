@@ -6,12 +6,14 @@ import { NewColumn } from '../../../types';
 import { getServerSession, Session } from 'next-auth';
 import { options } from '../auth/[...nextauth]';
 
+// Type guard for NewColumn validation
 const isNewColumn = (column: unknown): column is NewColumn => {
     return (
         typeof column === 'object' && column !== null && 'board_uuid' in column && 'name' in column && 'color' in column
     );
 };
 
+// Columns API handler with authentication
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const session = await getServerSession(req, res, options);
     if (!session) {
