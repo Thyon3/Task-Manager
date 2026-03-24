@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import useClickOutside from './useClickOutside';
 
+// Popover hook interface for dropdown/popup management
 type PopoverHook = {
     anchorEl: HTMLElement | null;
     isOpen: boolean;
@@ -12,6 +13,7 @@ type PopoverHook = {
     Component: React.FC<React.PropsWithChildren<{ anchorWidth?: boolean; className?: string }>>;
 };
 
+// Custom hook for popover/dropdown positioning and state management
 const usePopover = (): PopoverHook => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -68,11 +70,11 @@ const usePopover = (): PopoverHook => {
 
         return isOpen && popoverRoot
             ? ReactDOM.createPortal(
-                  <div ref={popoverRef} className={`absolute z-50 ${props.className}`}>
-                      {props.children}
-                  </div>,
-                  popoverRoot
-              )
+                <div ref={popoverRef} className={`absolute z-50 ${props.className}`}>
+                    {props.children}
+                </div>,
+                popoverRoot
+            )
             : null;
     };
 
