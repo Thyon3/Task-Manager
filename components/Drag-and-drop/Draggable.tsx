@@ -2,6 +2,7 @@ import { useDraggable } from '@dnd-kit/core';
 import { FC, PropsWithChildren } from 'react';
 import { UniqueIdentifier } from '@dnd-kit/core';
 
+// Draggable component for drag and drop functionality
 const Draggable: FC<PropsWithChildren<{ draggableId: UniqueIdentifier } & React.ComponentProps<'div'>>> = (props) => {
     const { draggableId, ...restProps } = props;
 
