@@ -1,14 +1,14 @@
 import { FC } from 'react';
 
+// Base Button component with customizable props
 const Button: FC<{ fullWidth?: boolean; className?: string; large?: boolean } & React.ComponentProps<'button'>> = (
     props
 ) => {
     const { fullWidth, large, className, ...restProps } = props;
     return (
         <button
-            className={`whitespace-nowrap rounded-full font-jakarta  font-bold text-white transition-colors disabled:opacity-25 ${
-                fullWidth ? 'w-full' : 'w-fit'
-            } ${className || ''} ${large ? 'py-4 px-6 text-base' : 'py-2 px-4 text-sm'}`}
+            className={`whitespace-nowrap rounded-full font-jakarta  font-bold text-white transition-colors disabled:opacity-25 ${fullWidth ? 'w-full' : 'w-fit'
+                } ${className || ''} ${large ? 'py-4 px-6 text-base' : 'py-2 px-4 text-sm'}`}
             {...restProps}
         >
             {props.children}
@@ -43,9 +43,8 @@ const ButtonSecondary: FC<React.ComponentProps<'button'>> = (props) => {
     return (
         <Button
             fullWidth
-            className={`enabled:hover:bg-secondary-light bg-primary bg-opacity-10 !text-primary hover:bg-opacity-25 dark:bg-white dark:bg-opacity-100 dark:hover:bg-opacity-100 ${
-                className || ''
-            }`}
+            className={`enabled:hover:bg-secondary-light bg-primary bg-opacity-10 !text-primary hover:bg-opacity-25 dark:bg-white dark:bg-opacity-100 dark:hover:bg-opacity-100 ${className || ''
+                }`}
             {...restProps}
         >
             {props.children}
