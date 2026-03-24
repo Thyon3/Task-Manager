@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 
+// Types for click outside detection
 type ClickEvent = MouseEvent | TouchEvent;
 type ClickOutsideHook = (ref: React.RefObject<HTMLElement | null>, handler: (e: ClickEvent) => void) => void;
 
+// Custom hook to detect clicks outside a component
 const useClickOutside: ClickOutsideHook = (ref, handler) => {
     useEffect(() => {
         let startedInside = false;
