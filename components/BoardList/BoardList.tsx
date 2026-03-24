@@ -7,6 +7,7 @@ import { useBoardsContext } from '../../store/BoardListContext';
 import useModal from '../../hooks/useModal';
 import BoardForm from '../Modals/BoardForm';
 
+// Individual board link component
 const BoardLink: FC<{ board: Board }> = ({ board }) => {
     const router = useRouter();
     const isActive = router.query.boardId === board.uuid;
@@ -14,11 +15,10 @@ const BoardLink: FC<{ board: Board }> = ({ board }) => {
     return (
         <Link
             href={`/board/${board.uuid}`}
-            className={`group mr-5 flex items-center rounded-r-full py-3.5 pl-3 text-base font-bold tracking-wide transition-all lg:pl-6  ${
-                isActive
+            className={`group mr-5 flex items-center rounded-r-full py-3.5 pl-3 text-base font-bold tracking-wide transition-all lg:pl-6  ${isActive
                     ? 'bg-primary text-white'
                     : ' text-mid-grey hover:bg-grey-highlight hover:text-primary dark:hover:bg-white'
-            }`}
+                }`}
         >
             <BoardIcon
                 className={`mr-2 min-w-[1rem] ${isActive ? 'fill-white' : 'fill-mid-grey group-hover:fill-primary'}`}
@@ -52,9 +52,8 @@ const NewBoardButton: FC<React.ComponentProps<'button'> & { handleBoardSelect?: 
             <button
                 onClick={newBoardHandler}
                 id="new-board-btn"
-                className={`group flex items-center py-3.5 pl-3 font-bold tracking-wide text-primary transition-all hover:text-primary-light lg:pl-6 ${
-                    className ?? ''
-                }`}
+                className={`group flex items-center py-3.5 pl-3 font-bold tracking-wide text-primary transition-all hover:text-primary-light lg:pl-6 ${className ?? ''
+                    }`}
                 {...restProps}
             >
                 <BoardIcon className="mr-2 h-4 fill-primary group-hover:fill-primary-light" />
@@ -83,9 +82,8 @@ const BoardList: FC<{ handleBoardSelect?: Function }> = ({ handleBoardSelect }) 
                 >{`All Boards (${boards.length})`}</span>
             )}
             <ul
-                className={`max-h-[calc(100vh-25rem)] overflow-y-scroll ${
-                    boards && boards.length > 0 ? 'min-h-[4rem]' : ''
-                }`}
+                className={`max-h-[calc(100vh-25rem)] overflow-y-scroll ${boards && boards.length > 0 ? 'min-h-[4rem]' : ''
+                    }`}
             >
                 {boards?.map((board) => (
                     <li key={board.uuid} onClick={boardSelectHandler}>
