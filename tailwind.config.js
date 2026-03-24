@@ -6,13 +6,15 @@ module.exports = {
     content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
-            // Animation that collapses the list item when it's being deleted
+            // Custom animations for the application
             keyframes: {
+                // Animation that collapses the list item when it's being deleted
                 'collapse-input': {
                     '0%': { height: '2.5rem', opacity: 1, 'margin-bottom': '.75rem' },
                     '85%': { height: '.5rem', opacity: 0, 'margin-bottom': '.15rem' },
                     '100%': { height: 0, opacity: 0, 'margin-bottom': 0 },
                 },
+                // Background floating animation
                 'background-float': {
                     '0%': { transform: 'translate(0, 0)' },
                     '20%': { transform: 'translate(10px, 15px)' },
@@ -21,6 +23,7 @@ module.exports = {
                     '80%': { transform: 'translate(5px, -5px) scale(1.1)' },
                     '100%': { transform: 'translate(0, 0) scale(1)' },
                 },
+                // Fade in animation
                 'fade-in': {
                     '0%': { opacity: 0, transform: 'translateY(-10px)' },
                     '100%': { opacity: 1, transform: 'translateY(0)' },
