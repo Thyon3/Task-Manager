@@ -2,6 +2,7 @@ import { useDroppable } from '@dnd-kit/core';
 import { FC, PropsWithChildren } from 'react';
 import { UniqueIdentifier } from '@dnd-kit/core';
 
+// Droppable component for drag and drop functionality
 const Droppable: FC<PropsWithChildren<{ droppableId: UniqueIdentifier } & React.ComponentProps<'div'>>> = (props) => {
     const { droppableId, ...restProps } = props;
 
